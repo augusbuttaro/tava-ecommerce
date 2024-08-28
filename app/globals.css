@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 142.1 25% 96%; /* Very light green */
+    --foreground: 160 25% 15%; /* Dark green for text */
+    --card: 142.1 20% 92%; /* Light green card background */
+    --card-foreground: 160 25% 15%; /* Dark green for card text */
+    --popover: 142.1 20% 92%; /* Light green for popovers */
+    --popover-foreground: 160 25% 15%; /* Dark green for popover text */
+    --primary: 169 63% 40%; /* #25a18e */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 142.1 76.2% 71.6%; /* #80ed99 */
+    --secondary-foreground: 160 25% 15%; /* Dark green for secondary text */
+    --muted: 142.1 15% 85%; /* Muted light green */
+    --muted-foreground: 160 25% 30%; /* Slightly darker green for muted text */
+    --accent: 142.1 20% 60%; /* Light green for accents */
+    --accent-foreground: 160 25% 15%; /* Dark green for accent text */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 142.1 15% 85%; /* Light green border */
+    --input: 142.1 15% 85%; /* Light green input background */
+    --ring: 169 63% 40%; /* #25a18e */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  .dark {
+    --background: 160 15% 10%; /* Very dark green */
+    --foreground: 160 15% 85%; /* Light green text color for contrast */
+    --card: 160 15% 12%; /* Darker green card background */
+    --card-foreground: 160 15% 90%; /* Light green for card text */
+    --popover: 160 15% 12%; /* Dark green for popovers */
+    --popover-foreground: 160 15% 85%; /* Light green for popover text */
+    --primary: 169 63% 40%; /* #25a18e */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 142.1 76.2% 71.6%; /* #80ed99 */
+    --secondary-foreground: 160 25% 15%;
+    --muted: 160 15% 20%; /* Dark green */
+    --muted-foreground: 160 15% 80%; /* Lighter green for muted text */
+    --accent: 160 15% 40%; /* Very dark green for accents */
+    --accent-foreground: 160 15% 90%; /* Light green for accent text */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 160 15% 20%; /* Dark green border */
+    --input: 160 15% 20%; /* Dark green input background */
+    --ring: 169 63% 40%; /* #25a18e */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
