@@ -7,6 +7,7 @@ import AddToCart from '@/components/product-details/AddToCart';
 import ProductRating from '@/components/product-details/ProductRating';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import ShareButton from '@/components/product-details/ShareButton';
 
 async function SingleProduct({ params }: { params: { id: string } }) {
   const product = await fetchSingleProduct(params.id);
@@ -33,7 +34,10 @@ async function SingleProduct({ params }: { params: { id: string } }) {
           <div>
             <div className="flex justify-between items-center mb-4">
               <h1 className="text-2xl capitalize font-semibold text-foreground">{name}</h1>
-              <FavoriteToggleButton productId={params.id} />
+              <div className='flex items-center gap-2'>
+                <FavoriteToggleButton productId={params.id} />
+                <ShareButton name={name} productId={params.id}/>
+              </div>
             </div>
 
             <ProductRating productId={params.id} className='flex items-center gap-2'/>
