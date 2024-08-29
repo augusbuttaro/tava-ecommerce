@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils"
+import { fetchProductRating } from "@/utils/actions"
 import { IoStar } from "react-icons/io5"
 
-function ProductRating ({ productId, className } : { productId:string, className?:string }){
-    const rating = 4.2
-    const count = 20
+async function ProductRating ({ productId, className } : { productId:string, className?:string }){
+    const { count, rating } = await fetchProductRating(productId)
     const countValue = `(${count}) Reviews`
     return(
         <span className={cn(className)}>

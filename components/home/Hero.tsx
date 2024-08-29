@@ -4,7 +4,7 @@ import HeroCarousel from "./HeroCarousel";
 
 function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[75vh] bg-background w-full max-w-7xl self-center text-foreground overflow-y-hidden">
+    <section className="relative flex flex-col items-center justify-center min-h-[75vh] bg-background w-full max-w-7xl self-center mt-16 text-foreground overflow-y-hidden">
       {/* Background Image Container */}
       <div className="absolute inset-0">
         <HeroCarousel className="absoluteobject-cover w-full h-full" />

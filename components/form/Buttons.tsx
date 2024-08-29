@@ -42,14 +42,14 @@ export function SubmitButton({
 
 type actionType='edit' | 'delete'
 
-export const IconButton = ({actionType}:{actionType:actionType})=>{
+export const IconButton = ({actionType, deleteClassName, editClassName}:{actionType:actionType, deleteClassName?:string, editClassName?:string})=>{
   const { pending } = useFormStatus()
   const renderIcon = ()=>{
     switch(actionType){
       case 'edit':
-        return <LuPenSquare />;
+        return <LuPenSquare className={editClassName}/>;
       case 'delete':
-        return <LuTrash2 />;
+        return <LuTrash2 className={deleteClassName} />;
       default:
         const never:never = actionType
         throw new Error(`Invalid action type ${never}`)

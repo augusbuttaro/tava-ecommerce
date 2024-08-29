@@ -1,5 +1,5 @@
 import BreadCrumbs from '@/components/product-details/BreadCrumbs';
-import { fetchSingleProduct } from '@/utils/actions';
+import { fetchSingleProduct, findExistingReview } from '@/utils/actions';
 import Image from 'next/image';
 import { formatCurrency } from '@/utils/format';
 import FavoriteToggleButton from '@/components/products/FavoriteToggleBtn';
@@ -8,11 +8,16 @@ import ProductRating from '@/components/product-details/ProductRating';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import ShareButton from '@/components/product-details/ShareButton';
+import SubmitReview from '@/components/reviews/SubmitReview';
+import ProductReviews from '@/components/reviews/ProductReviews';
+import { auth } from '@clerk/nextjs/server';
 
 async function SingleProduct({ params }: { params: { id: string } }) {
   const product = await fetchSingleProduct(params.id);
   const { name, image, company, description, price } = product;
   const dollarAmount = formatCurrency(price);
+  const { userId } = auth()
+  const noReview = userId && !(await findExistingReview(userId, product.id))
 
   return (
     <section className="flex flex-col gap-8 mx-auto p-6 w-3/5 min-h-[75vh]">
@@ -44,13 +49,18 @@ async function SingleProduct({ params }: { params: { id: string } }) {
 
             <h2 className="text-lg font-medium text-primary mt-4">{company}</h2>
             <p className="text-xl font-semibold text-foreground mt-2">{dollarAmount}</p>
-
             <p className="text-base text-muted-foreground mt-4 leading-relaxed">{description}</p>
           </div>
 
           <AddToCart productId={params.id} />
         </CardContent>
       </Card>
+
+      <ProductReviews productId={params.id} />
+
+      {
+        noReview && <SubmitReview productId={params.id} />
+      }
 
       <Button
         variant="outline"
