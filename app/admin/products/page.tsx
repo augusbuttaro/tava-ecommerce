@@ -48,7 +48,7 @@ async function AdminProducts() {
             return (
               <TableRow key={productId} className='group'>
                 <TableCell className="text-card-foreground px-4 dark:text-card-foreground underline">
-                  <Link href={`/products/${productId}`} className='group-hover:text-secondary'>
+                  <Link href={`/products/${productId}`} className='group-hover:text-primary dark:group-hover:text-secondary'>
                     {name}
                   </Link>
                 </TableCell>
