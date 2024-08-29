@@ -335,3 +335,19 @@ export const fetchProductRating = async (productId: string) => {
       count: result[0]?._count.rating ?? 0,
     };
   };
+
+export const fetchCartItems = async () => {};
+
+const fetchProduct = async () => {};
+
+export const fetchOrCreateCart = async () => {};
+
+const updateOrCreateCartItem = async () => {};
+
+export const updateCart = async () => {};
+
+export const addToCartAction = async () => {};
+
+export const removeCartItemAction = async () => {};
+
+export const updateCartItemAction = async () => {};

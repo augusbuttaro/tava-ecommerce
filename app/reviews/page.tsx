@@ -22,7 +22,7 @@ async function Reviews() {
       <div className="space-y-6">
         {reviews.length === 0 ? (
           <div className="text-center text-xl font-medium text-muted-foreground">
-            You haven't written any reviews yet...
+            You have not written any reviews yet...
           </div>
         ) : (
           reviews.map((review) => {
