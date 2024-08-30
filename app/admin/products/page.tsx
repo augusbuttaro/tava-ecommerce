@@ -18,7 +18,7 @@ import FormContainer from '@/components/form/FormContainer';
 
 async function AdminProducts() {
   const items = await fetchAdminProducts();
-  const headClassName = 'text-left px-4 text-sm font-semibold uppercase tracking-wide text-muted-foreground dark:text-muted-foreground border-r border-muted-foreground'
+  const headClassName = 'text-left px-4 text-sm font-semibold uppercase tracking-wide text-muted-foreground dark:text-muted-foreground border-r border-card'
   if (items.length === 0) return <EmptyList />;
 
   return (
