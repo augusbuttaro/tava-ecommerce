@@ -4,13 +4,13 @@ import Sidebar from "./Sidebar";
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen bg-background text-foreground">
+    <div className="flex flex-col xl:flex-row min-h-screen bg-background text-foreground">
       <Sidebar />
       <main className="flex-1 p-6">
         <h1 className="text-3xl font-bold">Dashboard</h1>
         <Separator className="my-4" />
         <div className="bg-card p-6 rounded-lg shadow-lg">
-          {children}
+          {children}  {/*Sales, Admin Products or Create Products*/}
         </div>
       </main>
     </div>

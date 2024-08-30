@@ -16,6 +16,8 @@ import { LuTrash2, LuPenSquare } from 'react-icons/lu';
 import { IconButton } from '@/components/form/Buttons';
 import FormContainer from '@/components/form/FormContainer';
 
+{/* Show all products in the store */}
+
 async function AdminProducts() {
   const items = await fetchAdminProducts();
   const headClassName = 'text-left px-4 text-sm font-semibold uppercase tracking-wide text-muted-foreground dark:text-muted-foreground border-r border-card'

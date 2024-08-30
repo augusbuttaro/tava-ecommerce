@@ -4,6 +4,8 @@ import { type NextRequest } from 'next/server';
 import db from '@/utils/db';
 import { ClientRequest } from 'http';
 
+//Setup stripe for payment
+
 export const POST = async (req:NextRequest) =>{
     const requestHeaders = new Headers(req.headers)
     const origin = requestHeaders.get('origin')

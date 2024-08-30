@@ -20,7 +20,7 @@ async function SingleProduct({ params }: { params: { id: string } }) {
   const noReview = userId && !(await findExistingReview(userId, product.id))
 
   return (
-    <section className="flex flex-col gap-8 mx-auto p-6 w-3/5 min-h-[75vh]">
+    <section className="flex flex-col gap-8 mx-auto p-6 w-3/4 h-[70%]">
       <BreadCrumbs name={name} />
 
       <Card className="flex flex-col md:flex-row gap-8 overflow-hidden shadow-lg rounded-lg flex-grow">
@@ -49,7 +49,7 @@ async function SingleProduct({ params }: { params: { id: string } }) {
 
             <h2 className="text-lg font-medium text-primary mt-4">{company}</h2>
             <p className="text-xl font-semibold text-foreground mt-2">{dollarAmount}</p>
-            <p className="text-base text-muted-foreground mt-4 leading-relaxed">{description}</p>
+            <p className="text-sm text-muted-foreground mt-4">{description}</p>
           </div>
 
           <AddToCart productId={params.id} />

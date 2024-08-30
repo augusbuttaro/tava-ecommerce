@@ -4,11 +4,13 @@ import { redirect } from 'next/navigation';
 import { type NextRequest } from 'next/server';
 import db from '@/utils/db';
 
+//Set stripe payment confirmation
+
 export const GET = async(req:NextRequest) =>{
     const {searchParams} = new URL(req.url) 
     const session_id = searchParams.get('session_id') as string
     try {
-        const session = await stripe.checkout.sessions.retrieve(session_id)
+        const session = await stripe.checkout.sessions.retrieve(session_id) 
         const orderId = session.metadata?.orderId
         const cartId = session.metadata?.cartId
         if(session.status === 'complete'){

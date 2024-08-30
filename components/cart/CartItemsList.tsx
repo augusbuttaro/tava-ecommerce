@@ -11,13 +11,16 @@ function CartItemsList({ cartItems }: { cartItems: CartItemWithProduct[] }) {
         const { image, name, company, price, id: productId } = cartItem.product;
 
         return (
-          <Card key={id} className="flex justify-between items-center p-4 bg-card border border-border shadow-sm space-x-4">
-            <div className='flex gap-6 items-center w-1/2'>
-                <FirstColumn image={image} name={name} />
-                <SecondColumn name={name} company={company} productId={productId} />
+          <Card key={id} className="flex flex-col p-4 bg-card border border-border shadow-sm space-x-4">
+            <div className='flex justify-between items-center'>
+              <div className='flex gap-6 items-center w-1/2'>
+                  <FirstColumn image={image} name={name} />
+                  <SecondColumn name={name} company={company} productId={productId} />
+              </div>
+              <ThirdColumn quantity={amount} id={id} />
+              <FourthColumn price={price} className="hidden lg:inline text-right" />
             </div>
-            <ThirdColumn quantity={amount} id={id} />
-            <FourthColumn price={price} className="text-right" />
+            <FourthColumn price={price} className="text-left inline lg:hidden" />
           </Card>
         );
       })}

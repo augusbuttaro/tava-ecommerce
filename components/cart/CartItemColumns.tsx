@@ -2,9 +2,11 @@ import { formatCurrency } from "@/utils/format"
 import Image from "next/image"
 import Link from "next/link"
 
+{/* Product Image */}
+
 export const FirstColumn = ({ name, image }: { image: string; name: string }) => {
     return (
-      <div className="w-40 h-24 relative overflow-hidden flex items-center justify-center p-2">
+      <div className="w-40 h-24 hidden lg:inline relative overflow-hidden flex items-center justify-center p-2">
         <Image
           src={image}
           alt={name}
@@ -17,6 +19,7 @@ export const FirstColumn = ({ name, image }: { image: string; name: string }) =>
     );
   };
   
+  {/* Name and Company */}
 
   export const SecondColumn = ({ name, company, productId, className }:{
     name:string,
@@ -34,11 +37,12 @@ export const FirstColumn = ({ name, image }: { image: string; name: string }) =>
     )
   }
   
+  {/* Product Price */}
 
   export const FourthColumn = ({ price, className } : { price:number, className?:string }) =>{
     return(
-      <div className={`${className} text-right`}>
-        <p className="text-lg font-semibold text-primary-foreground">{formatCurrency(price)}</p>
+      <div className={`${className} text-left`}>
+        <p className="text-sm lg:text-lg font-semibold text-primary-foreground">{formatCurrency(price)}</p>
       </div>
     )
   }
