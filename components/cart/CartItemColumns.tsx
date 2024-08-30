@@ -42,7 +42,7 @@ export const FirstColumn = ({ name, image }: { image: string; name: string }) =>
   export const FourthColumn = ({ price, className } : { price:number, className?:string }) =>{
     return(
       <div className={`${className} text-left`}>
-        <p className="text-sm lg:text-lg font-semibold text-primary-foreground">{formatCurrency(price)}</p>
+        <p className="text-sm lg:text-lg font-semibold text-muted-foreground">{formatCurrency(price)}</p>
       </div>
     )
   }
