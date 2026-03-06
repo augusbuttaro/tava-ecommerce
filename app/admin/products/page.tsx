@@ -12,7 +12,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
-import { LuTrash2, LuPenSquare } from 'react-icons/lu';
+import { LuTrash2, LuSquarePen } from 'react-icons/lu';
 import { IconButton } from '@/components/form/Buttons';
 import FormContainer from '@/components/form/FormContainer';
 

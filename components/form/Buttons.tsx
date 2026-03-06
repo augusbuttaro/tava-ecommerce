@@ -4,7 +4,7 @@ import { ReloadIcon } from "@radix-ui/react-icons";
 import { useFormStatus } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { LuPenSquare, LuTrash2 } from "react-icons/lu";
+import { LuSquarePen, LuTrash2 } from "react-icons/lu";
 import { SignInButton } from "@clerk/nextjs";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
@@ -47,7 +47,7 @@ export const IconButton = ({actionType, deleteClassName, editClassName}:{actionT
   const renderIcon = ()=>{
     switch(actionType){
       case 'edit':
-        return <LuPenSquare className={editClassName}/>;
+        return <LuSquarePen className={editClassName}/>;
       case 'delete':
         return <LuTrash2 className={deleteClassName} />;
       default:
